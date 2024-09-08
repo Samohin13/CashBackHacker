@@ -1,8 +1,7 @@
 package ru.netology.javaqa;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashbackHackServiceTest {
     CashbackHackService service = new CashbackHackService();
@@ -58,4 +57,27 @@ public class CashbackHackServiceTest {
         assertEquals(actual, expected);
     }
 
+    @Test
+
+    public void BuyAnother500() {
+        int amount = 1500;
+
+        int actual = service.remain(amount);
+        int expected = 500;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+
+    public void BuyAnother1() {
+        int amount = 999;
+
+        int actual = service.remain(amount);
+        int expected = 1;
+
+        assertEquals(actual, expected);
+
+    }
 }
+
