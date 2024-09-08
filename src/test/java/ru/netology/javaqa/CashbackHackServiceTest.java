@@ -1,7 +1,8 @@
-import org.testng.annotations.Test;
-import ru.netology.javaqa.CashbackHackService;
+package ru.netology.javaqa;
 
-import static org.testng.Assert.*;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
     CashbackHackService service = new CashbackHackService();
@@ -37,5 +38,24 @@ public class CashbackHackServiceTest {
         assertEquals(actual, expected);
     }
 
+    @Test
+    public void CashbackZeroAmount() {
+        int amount = 0;
+
+        int actual = service.remain(amount);
+        int expected = 1000;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void ShouldSayBuySomethingElseFor1000() {
+        int amount = 1000;
+
+        int actual = service.remain(amount);
+        int expected = 0;
+
+        assertEquals(actual, expected);
+    }
 
 }
